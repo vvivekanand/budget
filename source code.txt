@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Team Budget Planner App</title>
+        <style>
+        .budget{
+            background-image: url('https://www.cppr.in/wp-content/uploads/2018/02/budget-krAF-621x414@LiveMint.jpg');
+            background-size: cover;
+            background-color: red;
+            width: 1300px;
+            height: 520px;
+            border: 5px solid;
+            padding: 20px;
+            margin: 1px;
+          }
+          </style>
+    </head>
+    <body>
+        <div class="budget">
+            <h1><strong>Team Budget Planner</strong> </h1>
+            <form>
+                <input type="button" value="Add Product Details"onclick="addProductDetails()"><br><br><br>
+                <input type="button" value="Check Product Details"onclick="checkProductBudget()"><br>
+            </form>
+        </div>
+      
+        <script>
+        var dict={}
+        function addProductDetails() {
+            var product=prompt("Enter the Product Name : ");
+            var price=prompt("Enter the Price of the product "+product+" : ");
+            dict[product]=price; 
+        }
+        function checkProductBudget() {
+            var val=Object.values(dict);
+            var totalBudget=0;
+            for (let i=0;i<val.length;i++) {
+                var num=parseFloat(val[i]);
+                totalBudget+=num;
+        }
+        var t =document.getElementById('total_budget');
+        t.innerHTML = "Total Budget is : "+totalBudget+" Rs";
+    }
+    </script>
+    <h3 id="total_budget"> </h3>
+</body>
+</html>

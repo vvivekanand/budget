@@ -1,0 +1,6 @@
+
+Vivekanand
+
+1. Created planner.html file.
+2. when the user click on Add product details the user need to enter product name and product prize.
+3. when the user click on check product details it will show the total amount.
